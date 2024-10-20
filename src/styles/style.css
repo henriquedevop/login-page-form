@@ -1,6 +1,6 @@
 :root {
     --right-background: #FFFFFF;
-    --left-background: #0056FB;
+    --left-background: #5a189a;
     --text-color: #000000;
 }
 
@@ -45,6 +45,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 560px;
+    z-index: 9;
 }
 
 .input {
@@ -69,14 +70,15 @@ body {
     cursor: pointer;
     margin-bottom: 1rem;
     transition: 0.5s;
+    z-index: 2;
 }
 
 .button:hover {
-    background-color: #008afb;
+    background-color: #9d4edd;
     transform: scale(1.03);
 }
 
-.bottom-text {
+.area {
     width: 100%;
     max-width: 560px;
     margin-bottom: 1rem;
@@ -94,6 +96,106 @@ body {
     margin-left: 0.4rem;
 }
 
+.terms a {
+    text-decoration: none;
+    color: var(--text-color);
+    color: var(--left-background);
+}
+
 .right {
     flex: 1;
+    background-color: var(--left-background);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2.5rem;
+}
+
+.right-img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: var(--right-background);
+    max-width: 400px;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.description {
+    max-width: 400px;
+    line-height: 150%;
+    color: var(--right-background);
+
+}
+
+.form::before {
+    content: '';
+    background-image: url("../images/codeimg.png");
+    position: absolute;
+    background-size: 90px;
+    background-repeat: no-repeat;
+    height: 90px;
+    width: 90px;
+    z-index: 1;
+    bottom: -45px;
+    right: -30px;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        min-height: 100vh;
+        width: 100vw;
+    }
+
+    .left {
+        width: 85%;
+        padding: 1.5rem 0;
+    }
+
+    .right {
+        padding: 2rem 1rem;
+        width: 100%;
+        height: 100%;
+    }
+
+    .form::before {
+        background-size: 80px;
+        height: 80px;
+        width: 80px;
+        bottom: -40px;
+    }
+
+    .subtitle {
+        font-size: 2rem;
+    }
+
+    .right-img {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 500px) {
+    .right-img {
+        width: 60%;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+        max-width: 400px;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
 }
